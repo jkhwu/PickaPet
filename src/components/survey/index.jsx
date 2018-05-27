@@ -12,7 +12,8 @@ class Survey extends Component {
             zip: ''
         };
 
-        this.handleOptionChange = this.handleOptionChange.bind(this); // do this if you're passing down a function
+        this.handleOptionChange = this.handleOptionChange.bind(this); // bind like this if you're passing down a function
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     handleOptionChange(num, name) {
@@ -33,7 +34,7 @@ class Survey extends Component {
     handleFormSubmit(formSubmitEvent) {
         formSubmitEvent.preventDefault();
         console.log('Submit');
-        console.log('Final Answers', this.state.answers);
+        console.log(this.state.answers);
         console.log('kids?', this.state.answers[3]);
         console.log('Zip Code', this.state.zip);
         // axios.post('/api/pets', {
